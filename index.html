@@ -93,7 +93,6 @@
 			<!-- Here is the number of copies section for-->
             <label for="text5Object" id="text5Label"> Copies:</label><br>
             <select id="text5Object" name="text5Object">
-                <option value="">Choose number of prints...</option>
                 <option value="1">1</option>
                 <option value="2">2</option>
                 <option value="3">3</option>
@@ -141,7 +140,7 @@
                 <h2>HACCP label</h2>
                 <p><strong>Name:</strong> ${customerName}</p>
                 <p><strong>Product name:</strong> ${sauce}</p>
-                <p><strong>Allergens:</strong> ${toppings.join(', ')}</p>
+                <p><strong>Allergens:</strong> ${toppings.join(' <> ')}</p>
             `;
 
             document.getElementById('summary').innerHTML = summary;
@@ -160,9 +159,7 @@
             document.getElementById('urlSchemeText').textContent = url;
             document.getElementById('urlScheme').style.display = 'block';
         }
-
-
-       
+     
 		function generateUrlScheme() {
             const customerName = document.getElementById('customerName').value;
             const sauce = document.getElementById('sauce').value;
@@ -170,7 +167,8 @@
 			const copies = document.getElementById('text5Object').value;
 			const text1 = document.getElementById("text1Object").value;
             const text2 = document.getElementById("text2Object").value;
-			return `brotherwebprint://print?filename=joghurt.lbx&size=58.bin&text_name=${encodeURIComponent(customerName)}&text_sauce=${encodeURIComponent(sauce)}&text_toppings=${encodeURIComponent(toppings)}&copies=${encodeURIComponent(text5)}&text_text1=${encodeURIComponent(text1)}&text_text2=${encodeURIComponent(text2)}`;
+			//return `brotherwebprint://print?filename=joghurt.lbx&size=58.bin&text_name=${encodeURIComponent(customerName)}&text_sauce=${encodeURIComponent(sauce)}&text_toppings=${encodeURIComponent(toppings)}&copies=${encodeURIComponent(text5)}&text_text1=${encodeURIComponent(text1)}&text_text2=${encodeURIComponent(text2)}`;
+			return `brotherwebprint://print?filename=joghurt.lbx&size=58.bin&text_name=${encodeURIComponent(customerName)}&text_sauce=${encodeURIComponent(sauce)}&text_toppings=${encodeURIComponent(toppings)}`;
         }
 		
 
