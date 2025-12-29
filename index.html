@@ -167,8 +167,8 @@
 			const copies = document.getElementById('text5Object').value;
 			const text1 = document.getElementById("text1Object").value;
             const text2 = document.getElementById("text2Object").value;
-			//return `brotherwebprint://print?filename=joghurt.lbx&size=58.bin&text_name=${encodeURIComponent(customerName)}&text_sauce=${encodeURIComponent(sauce)}&text_toppings=${encodeURIComponent(toppings)}&copies=${encodeURIComponent(text5)}&text_text1=${encodeURIComponent(text1)}&text_text2=${encodeURIComponent(text2)}`;
-			return `brotherwebprint://print?filename=joghurt.lbx&size=58.bin&text_name=${encodeURIComponent(customerName)}&text_sauce=${encodeURIComponent(sauce)}&text_toppings=${encodeURIComponent(toppings)}`;
+			return `brotherwebprint://print?filename=joghurt.lbx&size=58.bin&text_name=${encodeURIComponent(customerName)}&text_sauce=${encodeURIComponent(sauce)}&text_toppings=${encodeURIComponent(toppings)}&copies=${encodeURIComponent(text5)}&text_text1=${encodeURIComponent(text1)}&text_text2=${encodeURIComponent(text2)}`;
+			//return `brotherwebprint://print?filename=joghurt.lbx&size=58.bin&text_name=${encodeURIComponent(customerName)}&text_sauce=${encodeURIComponent(sauce)}&text_toppings=${encodeURIComponent(toppings)}`;
         }
 		
 
@@ -179,7 +179,7 @@
             document.getElementById('summary').innerHTML = '';
             document.getElementById('printButton').style.display = 'none';
             document.getElementById('previewButton').style.display = 'none';
-            //document.getElementById('copies').value = 1;
+            document.getElementById('copies').value = 1;
 			document.getElementById('urlScheme').style.display = 'none';
         }
 
