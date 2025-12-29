@@ -56,16 +56,12 @@
             <h2>Name</h2>
             <input type="text" id="customerName" placeholder="Fill in your name">
         </div>
-        <div class="section">
-            <h2>Choose a product:</h2>
-            <select id="sauce">
-                <option value="Pasta al dente">Past al dente</option>
-                <option value="Fish filet">Fish filet</option>
-                <option value="Egg salad">Egg salad</option>
-                <option value="Chicken dry">Chicken Dry</option>
-                <option value="Mango Icecream">Mango Icecream</option>
-            </select>
+		
+		<div class="section">
+            <h2>Name</h2>
+            <input type="text" id="sauce" placeholder="Fill in your product">
         </div>
+
         <div class="section">
             <h2>Choose maximum 6 allergens</h2>
             <input type="checkbox" name="toppings" value="Celery"> Celery<br>
@@ -87,7 +83,7 @@
         <button onclick="showSummary()">Print</button>
         <div id="summary" class="section"></div>
         <div class="buttons">
-            <button id="printButton" style="display:none;" onclick="sendToPrint()">Zum Drucken senden</button>
+            <button id="printButton" style="display:none;" onclick="sendToPrint()">Print</button>
             <button id="previewButton" style="display:none;" onclick="previewLink()">Preview Link</button>
         </div>
         <div id="urlScheme" class="url-scheme" style="display:none;">
