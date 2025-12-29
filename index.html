@@ -166,9 +166,8 @@
             const sauce = document.getElementById('sauce').value;
 			const text5Object = document.getElementById('textObject').value;
             const toppings = Array.from(document.querySelectorAll('input[name="toppings"]:checked')).map(el => el.value).join(' <> ');
-			return `brotherwebprint://print?filename=joghurt.lbx & size=58.bin&text_name=$copies=2 & {encodeURIComponent(customerName)} & text_sauce=${encodeURIComponent(sauce)} & text_toppings=${encodeURIComponent(toppings)}`;
-        }
-
+			return `brotherwebprint://print?filename=joghurt.lbx&size=58.bin&text_name=${encodeURIComponent(customerName)}&text_sauce=${encodeURIComponent(sauce)}&text_toppings=${encodeURIComponent(toppings)}&copies=1`;
+		}
         function resetInputs() {
             document.getElementById('customerName').value = '';
             document.getElementById('sauce').value = '';
