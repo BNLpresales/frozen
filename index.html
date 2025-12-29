@@ -79,6 +79,10 @@
             <input type="checkbox" name="toppings" value="Blaubeeren"> Blaubeeren<br>
             <input type="checkbox" name="toppings" value="Sauerkirschen"> Sauerkirschen<br>
         </div>
+		
+            <label for="copies">Copies:</label>
+            <input type="text" id="copies" name="copies" required><br><br>
+		
         <button onclick="showSummary()">Absenden</button>
         <div id="summary" class="section"></div>
         <div class="buttons">
@@ -125,12 +129,17 @@
             document.getElementById('urlScheme').style.display = 'block';
         }
 
+
+            function generateUrl() {
+            const copies = document.getElementById('copies').value;
+		}
+		
         function generateUrlScheme() {
             const customerName = document.getElementById('customerName').value;
             const sauce = document.getElementById('sauce').value;
             const toppings = Array.from(document.querySelectorAll('input[name="toppings"]:checked')).map(el => el.value).join(',');
 
-            return `brotherwebprint://print?filename1=joghurt.lbx&size=58.bin&copies=3&text_name=${encodeURIComponent(customerName)}&text_sauce=${encodeURIComponent(sauce)}&text_toppings=${encodeURIComponent(toppings)}`;
+            return `brotherwebprint://print?filename1=joghurt.lbx&size=58.bin&copies=3&text_name=${encodeURIComponent(customerName)}&text_sauce=${encodeURIComponent(sauce)}&text_toppings=${encodeURIComponent(toppings)}&copies=${encodeURIComponent(copies)}`;
         }
 
         function resetInputs() {
