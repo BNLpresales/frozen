@@ -164,8 +164,7 @@
         function generateUrlScheme() {
             const customerName = document.getElementById('customerName').value;
             const sauce = document.getElementById('sauce').value;
-			const text5Object = document.getElementById('textObject').value;
-            const toppings = Array.from(document.querySelectorAll('input[name="toppings"]:checked')).map(el => el.value).join(' <> ');
+			const toppings = Array.from(document.querySelectorAll('input[name="toppings"]:checked')).map(el => el.value).join(' <> ');
 			return `brotherwebprint://print?filename=joghurt.lbx&size=58.bin&text_name=${encodeURIComponent(customerName)}&text_sauce=${encodeURIComponent(sauce)}&text_toppings=${encodeURIComponent(toppings)}`;
 		}
         function resetInputs() {
@@ -178,7 +177,7 @@
             document.getElementById('urlScheme').style.display = 'none';
         }
 
-        // Limit the selection of toppings to a maximum of 3
+        // Limit the selection of allergens to a maximum of 6
         document.querySelectorAll('input[name="toppings"]').forEach(checkbox => {
             checkbox.addEventListener('change', function() {
                 const checkedToppings = document.querySelectorAll('input[name="toppings"]:checked');
