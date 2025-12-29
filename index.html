@@ -80,7 +80,11 @@
 			<input type="checkbox" name="toppings" value="Sulfer dioxide"> Sulfer dioxide<br>
 			<input type="checkbox" name="toppings" value="Vegan"> Vegan<br>
         </div>
-        <button onclick="showSummary()">Print</button>
+		
+		    <label for="copies">Copies:</label>
+            <input type="text" id="copies" name="copies" required><br><br>
+        
+		<button onclick="showSummary()">Print</button>
         <div id="summary" class="section"></div>
         <div class="buttons">
             <button id="printButton" style="display:none;" onclick="sendToPrint()">Print</button>
@@ -129,9 +133,8 @@
         function generateUrlScheme() {
             const customerName = document.getElementById('customerName').value;
             const sauce = document.getElementById('sauce').value;
-            //const toppings = Array.from(document.querySelectorAll('input[name="toppings"]:checked')).map(el => el.value).join(',');
-			const toppings = Array.from(document.querySelectorAll('input[name="toppings"]:checked')).map(el => el.value).join(' <> ');
-            return `brotherwebprint://print?filename=joghurt.lbx&size=58.bin&text_name=${encodeURIComponent(customerName)}&text_sauce=${encodeURIComponent(sauce)}&text_toppings=${encodeURIComponent(toppings)}`;
+            const toppings = Array.from(document.querySelectorAll('input[name="toppings"]:checked')).map(el => el.value).join(' <> ');
+			return `brotherwebprint://print?filename=joghurt.lbx&size=58.bin&text_name=${encodeURIComponent(customerName)}&text_sauce=${encodeURIComponent(sauce)}&text_toppings=${encodeURIComponent(toppings)}`;
         }
 
         function resetInputs() {
