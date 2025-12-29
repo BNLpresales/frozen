@@ -54,16 +54,16 @@
         <h2>Frozen Joghurt</h2>
         <div class="section">
             <h2>Name:</h2>
-            <input type="text" id="customerName" placeholder="Fill in your name">
+            <input type="text" id="customerName" placeholder="Dein Name">
         </div>
         <div class="section">
-            <h2>Choose a product:</h2>
+            <h2>Wähle deine Soße:</h2>
             <select id="sauce">
-                <option value="Pasta al dente">Past al dente</option>
-                <option value="Fish filet">Fish filet</option>
-                <option value="Egg salad">Egg salad</option>
-                <option value="Chicken dry">Chicken Dry</option>
-                <option value="Mango Icecream">Mango Icecream</option>
+                <option value="Karamell">Karamell</option>
+                <option value="Weiße Schokolade">Weiße Schokolade</option>
+                <option value="Dunkle Schokolade">Dunkle Schokolade</option>
+                <option value="Erdbeere">Erdbeere</option>
+                <option value="Mango">Mango</option>
             </select>
         </div>
         <div class="section">
@@ -125,16 +125,12 @@
             document.getElementById('urlScheme').style.display = 'block';
         }
 
-		function generateUrl() {
-                const copies = document.getElementById('copies').value;
-		}
-		
         function generateUrlScheme() {
             const customerName = document.getElementById('customerName').value;
             const sauce = document.getElementById('sauce').value;
             const toppings = Array.from(document.querySelectorAll('input[name="toppings"]:checked')).map(el => el.value).join(',');
 
-            return `brotherwebprint://print?filename=joghurt.lbx&size=58.bin&text_name=${encodeURIComponent(customerName)}&text_sauce=${encodeURIComponent(sauce)}&text_toppings=${encodeURIComponent(toppings)}&copies=${encodeURIComponent(copies)}`;
+            return `brotherwebprint://print?filename=joghurt.lbx&size=58.bin&text_name=${encodeURIComponent(customerName)}&text_sauce=${encodeURIComponent(sauce)}&text_toppings=${encodeURIComponent(toppings)}`;
         }
 
         function resetInputs() {
