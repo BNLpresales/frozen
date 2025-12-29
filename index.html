@@ -135,7 +135,7 @@
 			const copies = document.getElementById('copies').value;
             const toppings = Array.from(document.querySelectorAll('input[name="toppings"]:checked')).map(el => el.value).join(',');
 
-            return `brotherwebprint://print?filename1=joghurt.lbx&size=58.bin&copies=3&text_name=${encodeURIComponent(customerName)}&text_sauce=${encodeURIComponent(sauce)}&text_toppings=${encodeURIComponent(toppings)}&copies=4}`;
+            return `brotherwebprint://print?filename1=joghurt.lbx&size=58.bin&copies=3&text_name=${encodeURIComponent(customerName)}&text_sauce=${encodeURIComponent(sauce)}&text_toppings=${encodeURIComponent(toppings)}}`;
         }
 
         function resetInputs() {
