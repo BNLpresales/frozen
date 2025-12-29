@@ -130,7 +130,7 @@
             const customerName = document.getElementById('customerName').value;
             const sauce = document.getElementById('sauce').value;
             //const toppings = Array.from(document.querySelectorAll('input[name="toppings"]:checked')).map(el => el.value).join(',');
-			const toppings = Array.from(document.querySelectorAll('input[name="toppings"]:checked')).map(el => el.value).join(<br>);
+			const toppings = Array.from(document.querySelectorAll('input[name="toppings"]:checked')).map(el => el.value).join(' <> ');
             return `brotherwebprint://print?filename=joghurt.lbx&size=58.bin&text_name=${encodeURIComponent(customerName)}&text_sauce=${encodeURIComponent(sauce)}&text_toppings=${encodeURIComponent(toppings)}`;
         }
 
