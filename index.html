@@ -78,18 +78,19 @@
 			<input type="checkbox" name="toppings" value="Vegan"> Vegan<br>
         </div>
 		
-					<!-- Here is the date-time section for .LBX name "date-time production"-->
-            <label for="text3Object" id="text3Label">Date&time > production:</label><br>
-            <select id="text3Object" name="text3Object">
-				<--<option value="datetime-local"><p><input type='datetime-local' id='datetime-local'></p></option>
+			<!-- Here is the date-time section for .LBX name "text1"-->
+            <label for="texy1Object" id="text1Label">Date&time > production:</label><br>
+            <select id="texy1Object" name="texy1Object">
+				<option value="datetime-local"><p><input type='text1' id='text1'></p></option>
             </select>
 			
-			<!-- Here is the date-time section for .LBX name "date-time use before"-->	
-            <label for="text4Object" id="text4Label">Date&time > use before:</label><br>
-            <select id="text4Object" name="text4Object">
-				<--<option value="datetime-local"><p><input type='datetime-local' id='datetime-local'></p></option>
+			<!-- Here is the date-time section for .LBX name "text2"-->	
+            <label for="texy2Object" id="text2Label">Date&time > use before:</label><br>
+            <select id="texy2Object" name="texy2Object">
+				<option value="datetime-local"><p><input type='text2' id='text2'></p></option>
             </select>
-		
+			
+			<!-- Here is the number of copies section for .LBX name "copies"-->
 		    <label for="copies">Copies:</label>
             <input type="text" id="copies" name="copies" required><br><br>
         
@@ -141,15 +142,15 @@
             document.getElementById('urlScheme').style.display = 'block';
         }
 
-		function generateUrl() {
-                const copies = document.getElementById('copies').value;
-		}	
         
 		function generateUrlScheme() {
             const customerName = document.getElementById('customerName').value;
             const sauce = document.getElementById('sauce').value;
             const toppings = Array.from(document.querySelectorAll('input[name="toppings"]:checked')).map(el => el.value).join(' <> ');
-			return `brotherwebprint://print?filename=joghurt.lbx&size=58.bin&text_name=${encodeURIComponent(customerName)}&copies=${encodeURIComponent(copies)}&text_sauce=${encodeURIComponent(sauce)}&text_toppings=${encodeURIComponent(toppings)}`;
+			const copies = document.getElementById('copies').value;
+			const text1 = document.getElementById("text1Object").value;
+            const text2 = document.getElementById("text2Object").value;
+			return `brotherwebprint://print?filename=joghurt.lbx&size=58.bin&text_name=${encodeURIComponent(customerName)}&text_sauce=${encodeURIComponent(sauce)}&text_toppings=${encodeURIComponent(toppings)}&text_text1=${encodeURIComponent(text1)}&text_text2=${encodeURIComponent(text2)}`;
         }
 		
 
@@ -160,7 +161,8 @@
             document.getElementById('summary').innerHTML = '';
             document.getElementById('printButton').style.display = 'none';
             document.getElementById('previewButton').style.display = 'none';
-            document.getElementById('urlScheme').style.display = 'none';
+            document.getElementById('copies').value = 1;
+			document.getElementById('urlScheme').style.display = 'none';
         }
 
         // Limit the selection of toppings to a maximum of 3
