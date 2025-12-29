@@ -130,12 +130,17 @@
             document.getElementById('urlScheme').style.display = 'block';
         }
 
-        function generateUrlScheme() {
+		function generateUrl() {
+                const copies = document.getElementById('copies').value;
+		}	
+        
+		function generateUrlScheme() {
             const customerName = document.getElementById('customerName').value;
             const sauce = document.getElementById('sauce').value;
             const toppings = Array.from(document.querySelectorAll('input[name="toppings"]:checked')).map(el => el.value).join(' <> ');
-			return `brotherwebprint://print?filename=joghurt.lbx&size=58.bin&text_name=${encodeURIComponent(customerName)}&text_sauce=${encodeURIComponent(sauce)}&text_toppings=${encodeURIComponent(toppings)}`;
+			return `brotherwebprint://print?filename=joghurt.lbx&size=58.bin&text_name=${encodeURIComponent(customerName)}&text_sauce=${encodeURIComponent(sauce)}&text_toppings=${encodeURIComponent(toppings)}&copies=${encodeURIComponent(copies)}`;
         }
+		
 
         function resetInputs() {
             document.getElementById('customerName').value = '';
