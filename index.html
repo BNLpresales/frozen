@@ -81,16 +81,30 @@
 			<input type="checkbox" name="toppings" value="Vegan"> Vegan<br>
         </div>
 		
+					<!-- Here is the date-time section for .LBX name "date-time production"-->
+            <label for="text3Object" id="text3Label">Date&time > production:</label><br>
+            <select id="text3Object" name="text3Object">
+				<--<option value="datetime-local"><p><input type='datetime-local' id='datetime-local'></p></option>
+            </select>
+			
+			<!-- Here is the date-time section for .LBX name "date-time use before"-->	
+            <label for="text4Object" id="text4Label">Date&time > use before:</label><br>
+            <select id="text4Object" name="text4Object">
+				<--<option value="datetime-local"><p><input type='datetime-local' id='datetime-local'></p></option>
+            </select>
+		
 		    <label for="copies">Copies:</label>
             <input type="text" id="copies" name="copies" required><br><br>
         
 		<button onclick="showSummary()">Preview Print data</button>
         <div id="summary" class="section"></div>
-        <div class="buttons">
+        
+		<div class="buttons">
             <button id="printButton" style="display:none;" onclick="sendToPrint()">Print now</button>
             <button id="previewButton" style="display:none;" onclick="previewLink()">Preview Link</button>
         </div>
-        <div id="urlScheme" class="url-scheme" style="display:none;">
+        
+		<div id="urlScheme" class="url-scheme" style="display:none;">
             <h3>Smooth Print URL Scheme</h3>
             <p id="urlSchemeText"></p>
         </div>
