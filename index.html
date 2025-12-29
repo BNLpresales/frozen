@@ -79,23 +79,39 @@
         </div>
 		
 			<!-- Here is the date-time section for .LBX name "text1"-->
-			
-            <label for="text1Object" id="text1Label">Date&time > production:</label><br>
+			<label for="text1Object" id="text1Label">Date&time > production:</label><br>
             <select id="text1Object" name="text1Object">
 			<option value="datetime-local"><p><input type='datetime-local' id='text1Object'></p></option>
             </select>
 			
 			<!-- Here is the date-time section for .LBX name "text2"-->
-			
-            <label for="text2Object" id="text2Label">Date&time > use before:</label><br>
+			<label for="text2Object" id="text2Label">Date&time > use before:</label><br>
             <select id="text2Object" name="text2Object">
 			<option value="datetime-local"><p><input type='datetime-local' id='text2Object'></p></option>
-
             </select>
 			
-			<!-- Here is the number of copies section for .LBX name "copies"-->
-		    <label for="copies">Copies:</label>
-            <input type="text" id="copies" name="copies" required><br><br>
+			<!-- Here is the number of copies section for-->
+            <label for="text5Object" id="text5Label"</label><br>
+            <select id="text5Object" name="text5Object">
+                <option value="">Choose number of prints...</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+				<option value="4">4</option>
+				<option value="5">5</option>
+				<option value="6">6</option>
+				<option value="7">7</option>
+				<option value="8">8</option>
+				<option value="9">9</option>
+				<option value="10">10</option>
+				<option value="11">11</option>
+				<option value="12">12</option>
+				<option value="13">13</option>
+				<option value="14">14</option>
+				<option value="15">15</option>
+				<option value="16">16</option>
+            </select>
+			
         
 		<button onclick="showSummary()">Preview Print data</button>
         <div id="summary" class="section"></div>
@@ -145,15 +161,19 @@
             document.getElementById('urlScheme').style.display = 'block';
         }
 
+
+		function generateUrl() {
+			const copies = document.getElementById('copies').value;
+		} 
         
 		function generateUrlScheme() {
             const customerName = document.getElementById('customerName').value;
             const sauce = document.getElementById('sauce').value;
             const toppings = Array.from(document.querySelectorAll('input[name="toppings"]:checked')).map(el => el.value).join(' <> ');
-			const copies = document.getElementById('copies').value;
+			//const copies = document.getElementById('copies').value;
 			const text1 = document.getElementById("text1Object").value;
             const text2 = document.getElementById("text2Object").value;
-			return `brotherwebprint://print?filename=joghurt.lbx&size=58.bin&text_name=${encodeURIComponent(customerName)}&text_sauce=${encodeURIComponent(sauce)}&text_toppings=${encodeURIComponent(toppings)}&text_text1=${encodeURIComponent(text1)}&text_text2=${encodeURIComponent(text2)}`;
+			return `brotherwebprint://print?filename=joghurt.lbx&size=58.bin&text_name=${encodeURIComponent(customerName)}&text_sauce=${encodeURIComponent(sauce)}&text_toppings=${encodeURIComponent(toppings)}&text_text1=${encodeURIComponent(text1)}&text_text2=${encodeURIComponent(text2)}&copies=${encodeURIComponent(text_text5)}`;
         }
 		
 
