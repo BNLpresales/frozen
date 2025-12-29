@@ -115,7 +115,7 @@
             </select>
 			<br><br>
 					
-        <button onclick="showSummary()">Check data</button>
+        <button onclick="showSummary()">Check your data input</button>
         <div id="summary" class="section"></div>
         <div class="buttons">
             <button id="printButton" style="display:none;" onclick="sendToPrint()">Send to printer</button>
@@ -165,8 +165,6 @@
             const customerName = document.getElementById('customerName').value;
             const sauce = document.getElementById('sauce').value;
             const toppings = Array.from(document.querySelectorAll('input[name="toppings"]:checked')).map(el => el.value).join(' <> ');
-
-            //return `brotherwebprint://print?filename=joghurt.lbx&size=58.bin&text_name=${encodeURIComponent(customerName)}&text_sauce=${encodeURIComponent(sauce)}&text_toppings=${encodeURIComponent(toppings)}&copies=${encodeURIComponent(text5)}`;
 			return `brotherwebprint://print?filename=joghurt.lbx&size=58.bin&text_name=${encodeURIComponent(customerName)}&text_sauce=${encodeURIComponent(sauce)}&text_toppings=${encodeURIComponent(toppings)}`;
         }
 
