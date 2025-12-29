@@ -56,29 +56,30 @@
             <h2>Name:</h2>
             <input type="text" id="customerName" placeholder="Dein Name">
         </div>
-        <div class="section">
-            <h2>Wähle deine Soße:</h2>
-            <select id="sauce">
-                <option value="Karamell">Karamell</option>
-                <option value="Weiße Schokolade">Weiße Schokolade</option>
-                <option value="Dunkle Schokolade">Dunkle Schokolade</option>
-                <option value="Erdbeere">Erdbeere</option>
-                <option value="Mango">Mango</option>
-            </select>
+		
+		<div class="section">
+            <input type="text" id="sauce" placeholder="Fill in your product">
         </div>
+
         <div class="section">
-            <h2>Wähle bis zu 3 Toppings:</h2>
-            <input type="checkbox" name="toppings" value="Schokolinsen"> Schokolinsen<br>
-            <input type="checkbox" name="toppings" value="Schokostreusel"> Schokostreusel<br>
-            <input type="checkbox" name="toppings" value="Haselnusskrokant"> Haselnusskrokant<br>
-            <input type="checkbox" name="toppings" value="Bunte Streusel"> Bunte Streusel<br>
-            <input type="checkbox" name="toppings" value="Kokosraspeln"> Kokosraspeln<br>
-            <input type="checkbox" name="toppings" value="Knusper-Müsli"> Knusper-Müsli<br>
-            <input type="checkbox" name="toppings" value="Schoko-Knusper-Müsli"> Schoko-Knusper-Müsli<br>
-            <input type="checkbox" name="toppings" value="Erdbeeren"> Erdbeeren<br>
-            <input type="checkbox" name="toppings" value="Blaubeeren"> Blaubeeren<br>
-            <input type="checkbox" name="toppings" value="Sauerkirschen"> Sauerkirschen<br>
+            <h2>Choose maximum 6 allergens</h2>
+            <input type="checkbox" name="toppings" value="Celery"> Celery
+            <input type="checkbox" name="toppings" value="Crustaceans"> Crustaceans
+            <input type="checkbox" name="toppings" value="Egg"> Egg <br>
+            <input type="checkbox" name="toppings" value="Fish"> Fish
+            <input type="checkbox" name="toppings" value="Gluten"> Gluten
+            <input type="checkbox" name="toppings" value="Lupin"> Lupin<br>
+            <input type="checkbox" name="toppings" value="Milk"> Milk
+            <input type="checkbox" name="toppings" value="Molluks"> Molluks
+            <input type="checkbox" name="toppings" value="Mustard"> Mustard<br>
+            <input type="checkbox" name="toppings" value="Nuts"> Nuts
+			<input type="checkbox" name="toppings" value="Peanuts"> Peanuts
+			<input type="checkbox" name="toppings" value="Sesame"> Sesame<br>
+			<input type="checkbox" name="toppings" value="Soy"> Soy
+			<input type="checkbox" name="toppings" value="Sulfer dioxide"> Sulfer dioxide
+			<input type="checkbox" name="toppings" value="Vegan"> Vegan<br>
         </div>
+		
         <button onclick="showSummary()">Absenden</button>
         <div id="summary" class="section"></div>
         <div class="buttons">
