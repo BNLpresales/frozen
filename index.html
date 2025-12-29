@@ -97,7 +97,7 @@
             const sauce = document.getElementById('sauce').value;
             const toppings = Array.from(document.querySelectorAll('input[name="toppings"]:checked')).map(el => el.value);
 
-            if (toppings.length > 3) {
+            if (toppings.length > 6) {
                 alert("Du kannst nur bis zu 3 Toppings auswählen.");
                 return;
             }
@@ -148,7 +148,7 @@
         document.querySelectorAll('input[name="toppings"]').forEach(checkbox => {
             checkbox.addEventListener('change', function() {
                 const checkedToppings = document.querySelectorAll('input[name="toppings"]:checked');
-                if (checkedToppings.length > 3) {
+                if (checkedToppings.length > 6) {
                     this.checked = false;
                     alert("Du kannst nur bis zu 3 Toppings auswählen.");
                 }
