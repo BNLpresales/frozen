@@ -164,7 +164,7 @@
             const customerName = document.getElementById('customerName').value;
             const sauce = document.getElementById('sauce').value;
             const toppings = Array.from(document.querySelectorAll('input[name="toppings"]:checked')).map(el => el.value).join(' <> ');
-			const copies = document.getElementById('text5Object').value;
+			//const copies = document.getElementById('text5Object').value;
 			const text1 = document.getElementById("text1Object").value;
             const text2 = document.getElementById("text2Object").value;
 			//return `brotherwebprint://print?filename=joghurt.lbx&size=58.bin&text_name=${encodeURIComponent(customerName)}&text_sauce=${encodeURIComponent(sauce)}&text_toppings=${encodeURIComponent(toppings)}&copies=${encodeURIComponent(text5)}&text_text1=${encodeURIComponent(text1)}&text_text2=${encodeURIComponent(text2)}`;
