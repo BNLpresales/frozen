@@ -185,9 +185,9 @@
         document.querySelectorAll('input[name="toppings"]').forEach(checkbox => {
             checkbox.addEventListener('change', function() {
                 const checkedToppings = document.querySelectorAll('input[name="toppings"]:checked');
-                if (checkedToppings.length > 3) {
+                if (checkedToppings.length > 6) {
                     this.checked = false;
-                    alert("Du kannst nur bis zu 3 Toppings auswählen.");
+                    alert("You can use maximum 6 allergens.");
                 }
             });
         });
