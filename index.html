@@ -52,33 +52,65 @@
         <img src="Bluebar.jpg" alt="Logo" class="logo">
         <h1>Brother EuroCIS 25</h1>
         <h2>Frozen Joghurt</h2>
-        <div class="section">
-            <h2>Name:</h2>
-            <input type="text" id="customerName" placeholder="Dein Name">
+		
+		<div class="section">
+            <input type="text" id="customerName" placeholder="Fill in your name">
         </div>
-        <div class="section">
-            <h2>Wähle deine Soße:</h2>
-            <select id="sauce">
-                <option value="Karamell">Karamell</option>
-                <option value="Weiße Schokolade">Weiße Schokolade</option>
-                <option value="Dunkle Schokolade">Dunkle Schokolade</option>
-                <option value="Erdbeere">Erdbeere</option>
-                <option value="Mango">Mango</option>
+		
+		<div class="section">
+            <input type="text" id="sauce" placeholder="Fill in your product">
+        </div>
+
+            <h2>Choose maximum 6 allergens</h2>
+            <input type="checkbox" name="toppings" value="Celery"> Celery
+            <input type="checkbox" name="toppings" value="Crustaceans"> Crustaceans
+            <input type="checkbox" name="toppings" value="Egg"> Egg <br>
+            <input type="checkbox" name="toppings" value="Fish"> Fish
+            <input type="checkbox" name="toppings" value="Gluten"> Gluten
+            <input type="checkbox" name="toppings" value="Lupin"> Lupin<br>
+            <input type="checkbox" name="toppings" value="Milk"> Milk
+            <input type="checkbox" name="toppings" value="Molluks"> Molluks
+            <input type="checkbox" name="toppings" value="Mustard"> Mustard<br>
+            <input type="checkbox" name="toppings" value="Nuts"> Nuts
+			<input type="checkbox" name="toppings" value="Peanuts"> Peanuts
+			<input type="checkbox" name="toppings" value="Sesame"> Sesame<br>
+			<input type="checkbox" name="toppings" value="Soy"> Soy
+			<input type="checkbox" name="toppings" value="Sulfer dioxide"> Sulfer dioxide
+			<input type="checkbox" name="toppings" value="Vegan"> Vegan<br><br>
+		
+			<!-- Here is the date-time section for .LBX textbox name "text1"-->
+			<label for="text1Object" id="text1">Date&time > production:</label><br>
+            <select id="text1" name="text1" value="datetime-local">
+			<option value="text1"></p><input type="datetime-local" id='text1Object'></p></option>          
+			</select>
+
+			<!-- Here is the date-time section for .LBX textbox name "text2"-->
+			<label for="text2Object" id="text1">Date&time > production:</label><br>
+            <select id="text2" name="text2" value="datetime-local">
+			<option value="text2"></p><input type="datetime-local" id='text1Object'></p></option>          
+			</select>
+			
+			<!-- Here is the number of copies section-->
+            <label for="text3Object" id="text3Label"> Copies:</label><br>
+            <select id="text3Object" name="text3Object">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+				<option value="4">4</option>
+				<option value="5">5</option>
+				<option value="6">6</option>
+				<option value="7">7</option>
+				<option value="8">8</option>
+				<option value="9">9</option>
+				<option value="10">10</option>
+				<option value="11">11</option>
+				<option value="12">12</option>
+				<option value="13">13</option>
+				<option value="14">14</option>
+				<option value="15">15</option>
+				<option value="16">16</option>
             </select>
-        </div>
-        <div class="section">
-            <h2>Wähle bis zu 3 Toppings:</h2>
-            <input type="checkbox" name="toppings" value="Schokolinsen"> Schokolinsen<br>
-            <input type="checkbox" name="toppings" value="Schokostreusel"> Schokostreusel<br>
-            <input type="checkbox" name="toppings" value="Haselnusskrokant"> Haselnusskrokant<br>
-            <input type="checkbox" name="toppings" value="Bunte Streusel"> Bunte Streusel<br>
-            <input type="checkbox" name="toppings" value="Kokosraspeln"> Kokosraspeln<br>
-            <input type="checkbox" name="toppings" value="Knusper-Müsli"> Knusper-Müsli<br>
-            <input type="checkbox" name="toppings" value="Schoko-Knusper-Müsli"> Schoko-Knusper-Müsli<br>
-            <input type="checkbox" name="toppings" value="Erdbeeren"> Erdbeeren<br>
-            <input type="checkbox" name="toppings" value="Blaubeeren"> Blaubeeren<br>
-            <input type="checkbox" name="toppings" value="Sauerkirschen"> Sauerkirschen<br>
-        </div>
+			<br><br>			
         <button onclick="showSummary()">Absenden</button>
         <div id="summary" class="section"></div>
         <div class="buttons">
