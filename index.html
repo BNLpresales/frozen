@@ -87,7 +87,7 @@
 			<!-- Here is the date-time section for .LBX textbox name "text2"-->
 			<label for="text2Object" id="text1">Date&time > production:</label><br>
             <select id="text2" name="text2" value="datetime-local">
-			<option value="text2"></p><input type="datetime-local" id='text1Object'></p></option>          
+			<option value="text2"></p><input type="datetime-local" id='text2Object'></p></option>          
 			</select>
 			
 			<!-- Here is the number of copies section-->
@@ -110,7 +110,8 @@
 				<option value="15">15</option>
 				<option value="16">16</option>
             </select>
-			<br><br>			
+			<br><br>
+			
         <button onclick="showSummary()">Absenden</button>
         <div id="summary" class="section"></div>
         <div class="buttons">
@@ -157,12 +158,14 @@
             document.getElementById('urlScheme').style.display = 'block';
         }
 
-        function generateUrlScheme() {
+		function generateUrlScheme() {
             const customerName = document.getElementById('customerName').value;
             const sauce = document.getElementById('sauce').value;
-            const toppings = Array.from(document.querySelectorAll('input[name="toppings"]:checked')).map(el => el.value).join(',');
-
-            return `brotherwebprint://print?filename=joghurt.lbx&size=58.bin&text_name=${encodeURIComponent(customerName)}&text_sauce=${encodeURIComponent(sauce)}&text_toppings=${encodeURIComponent(toppings)}`;
+            const toppings = Array.from(document.querySelectorAll('input[name="toppings"]:checked')).map(el => el.value).join(' <> ');
+			const text1 = document.getElementById("text1Object").value;
+            const text2 = document.getElementById("text2Object").value;
+			const copies = document.getElementById('text3Object').value;
+			return `brotherwebprint://print?filename=joghurt.lbx&size=58.bin&text_text1=${encodeURIComponent(text1)}&text_text2=${encodeURIComponent(text2)}&text_name=${encodeURIComponent(customerName)}&text_sauce=${encodeURIComponent(sauce)}&text_toppings=${encodeURIComponent(toppings)}`;
         }
 
         function resetInputs() {
