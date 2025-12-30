@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Brother EuroCIS 25 Frozen Joghurt</title>
+    <title>Brother Smooth print demo HACCP</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -50,8 +50,7 @@
 <body>
     <div class="container">
         <img src="Bluebar.jpg" alt="Logo" class="logo">
-        <h1>Brother EuroCIS 25</h1>
-        <h2>Frozen Joghurt</h2>
+        <h1>Brother Smooth print demo HACCP</h1>
 		
 		<div class="section">
             <input type="text" id="customerName" placeholder="Fill in your name">
@@ -129,15 +128,15 @@
             const sauce = document.getElementById('sauce').value;
             const toppings = Array.from(document.querySelectorAll('input[name="toppings"]:checked')).map(el => el.value);
 
-            if (toppings.length > 3) {
+            if (toppings.length > 6) {
                 alert("You can use maximum 6 allergens.");
                 return;
             }
 
             const summary = `
-                <h2>Dein Frozen Joghurt</h2>
+                <h2>Your HACCCP label data</h2>
                 <p><strong>Name:</strong> ${customerName}</p>
-                <p><strong>Soße:</strong> ${sauce}</p>
+                <p><strong>Product name:</strong> ${sauce}</p>
                 <p><strong>Toppings:</strong> ${toppings.join(', ')}</p>
             `;
 
