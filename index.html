@@ -111,10 +111,10 @@
             </select>
 			<br><br>
 			
-        <button onclick="showSummary()">Absenden</button>
+        <button onclick="showSummary()">Preview</button>
         <div id="summary" class="section"></div>
         <div class="buttons">
-            <button id="printButton" style="display:none;" onclick="sendToPrint()">Zum Drucken senden</button>
+            <button id="printButton" style="display:none;" onclick="sendToPrint()">Print label</button>
             <button id="previewButton" style="display:none;" onclick="previewLink()">Preview Link</button>
         </div>
         <div id="urlScheme" class="url-scheme" style="display:none;">
@@ -142,7 +142,7 @@
 
             document.getElementById('summary').innerHTML = summary;
             document.getElementById('printButton').style.display = 'block';
-            document.getElementById('previewButton').style.display = 'block';
+            //document.getElementById('previewButton').style.display = 'block';
         }
 
         function sendToPrint() {
