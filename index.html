@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Brother Smooth print demo HACCP</title>
+    <title>Brother EuroCIS 25 Frozen Joghurt</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -50,76 +50,42 @@
 <body>
     <div class="container">
         <img src="Bluebar.jpg" alt="Logo" class="logo">
-        <h1>Brother Smooth print demo HACCP</h1>
-		
+        <h1>Brother EuroCIS 25</h1>
+        <h2>Frozen Joghurt</h2>
         <div class="section">
-            <input type="text" id="customerName" placeholder="Fill in your name">
+            <h2>Name:</h2>
+            <input type="text" id="customerName" placeholder="Dein Name">
         </div>
-		
-		<div class="section">
-            <input type="text" id="sauce" placeholder="Fill in your product">
-        </div>
-
-            <h2>Choose maximum 6 allergens</h2>
-            <input type="checkbox" name="toppings" value="Celery"> Celery
-            <input type="checkbox" name="toppings" value="Crustaceans"> Crustaceans
-            <input type="checkbox" name="toppings" value="Egg"> Egg <br>
-            <input type="checkbox" name="toppings" value="Fish"> Fish
-            <input type="checkbox" name="toppings" value="Gluten"> Gluten
-            <input type="checkbox" name="toppings" value="Lupin"> Lupin<br>
-            <input type="checkbox" name="toppings" value="Milk"> Milk
-            <input type="checkbox" name="toppings" value="Molluks"> Molluks
-            <input type="checkbox" name="toppings" value="Mustard"> Mustard<br>
-            <input type="checkbox" name="toppings" value="Nuts"> Nuts
-			<input type="checkbox" name="toppings" value="Peanuts"> Peanuts
-			<input type="checkbox" name="toppings" value="Sesame"> Sesame<br>
-			<input type="checkbox" name="toppings" value="Soy"> Soy
-			<input type="checkbox" name="toppings" value="Sulfer dioxide"> Sulfer dioxide
-			<input type="checkbox" name="toppings" value="Vegan"> Vegan<br>
-		
-			<!-- Here is the date-time section for .LBX textbox name "text1"-->
-			<label for="text1Object" id="text1">Date&time > production:</label><br>
-            <select id="text1" name="text1" value="datetime-local">
-			<option value="text1"></p><input type="datetime-local" id='text1Object'></p></option>          
-			</select>
-
-			<!-- Here is the date-time section for .LBX textbox name "text2"-->
-			<label for="text2Object" id="text1">Date&time > production:</label><br>
-            <select id="text2" name="text2" value="datetime-local">
-			<option value="text2"></p><input type="datetime-local" id='text1Object'></p></option>          
-			</select>
-			
-			<!-- Here is the number of copies section-->
-            <label for="text3Object" id="text3Label"> Copies:</label><br>
-            <select id="text3Object" name="text3Object">
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-				<option value="4">4</option>
-				<option value="5">5</option>
-				<option value="6">6</option>
-				<option value="7">7</option>
-				<option value="8">8</option>
-				<option value="9">9</option>
-				<option value="10">10</option>
-				<option value="11">11</option>
-				<option value="12">12</option>
-				<option value="13">13</option>
-				<option value="14">14</option>
-				<option value="15">15</option>
-				<option value="16">16</option>
+        <div class="section">
+            <h2>Wähle deine Soße:</h2>
+            <select id="sauce">
+                <option value="Karamell">Karamell</option>
+                <option value="Weiße Schokolade">Weiße Schokolade</option>
+                <option value="Dunkle Schokolade">Dunkle Schokolade</option>
+                <option value="Erdbeere">Erdbeere</option>
+                <option value="Mango">Mango</option>
             </select>
-			<br><br>			
-				
-		<button onclick="showSummary()">Preview Print data</button>
+        </div>
+        <div class="section">
+            <h2>Wähle bis zu 3 Toppings:</h2>
+            <input type="checkbox" name="toppings" value="Schokolinsen"> Schokolinsen<br>
+            <input type="checkbox" name="toppings" value="Schokostreusel"> Schokostreusel<br>
+            <input type="checkbox" name="toppings" value="Haselnusskrokant"> Haselnusskrokant<br>
+            <input type="checkbox" name="toppings" value="Bunte Streusel"> Bunte Streusel<br>
+            <input type="checkbox" name="toppings" value="Kokosraspeln"> Kokosraspeln<br>
+            <input type="checkbox" name="toppings" value="Knusper-Müsli"> Knusper-Müsli<br>
+            <input type="checkbox" name="toppings" value="Schoko-Knusper-Müsli"> Schoko-Knusper-Müsli<br>
+            <input type="checkbox" name="toppings" value="Erdbeeren"> Erdbeeren<br>
+            <input type="checkbox" name="toppings" value="Blaubeeren"> Blaubeeren<br>
+            <input type="checkbox" name="toppings" value="Sauerkirschen"> Sauerkirschen<br>
+        </div>
+        <button onclick="showSummary()">Absenden</button>
         <div id="summary" class="section"></div>
-        
-		<div class="buttons">
-            <button id="printButton" style="display:none;" onclick="sendToPrint()">Print now</button>
+        <div class="buttons">
+            <button id="printButton" style="display:none;" onclick="sendToPrint()">Zum Drucken senden</button>
             <button id="previewButton" style="display:none;" onclick="previewLink()">Preview Link</button>
         </div>
-        
-		<div id="urlScheme" class="url-scheme" style="display:none;">
+        <div id="urlScheme" class="url-scheme" style="display:none;">
             <h3>Smooth Print URL Scheme</h3>
             <p id="urlSchemeText"></p>
         </div>
@@ -130,16 +96,16 @@
             const sauce = document.getElementById('sauce').value;
             const toppings = Array.from(document.querySelectorAll('input[name="toppings"]:checked')).map(el => el.value);
 
-            if (toppings.length > 6) {
-                alert("You can use maximum 6 allergens.");
+            if (toppings.length > 3) {
+                alert("Du kannst nur bis zu 3 Toppings auswählen.");
                 return;
             }
 
             const summary = `
-                <h2>HACCP label</h2>
+                <h2>Dein Frozen Joghurt</h2>
                 <p><strong>Name:</strong> ${customerName}</p>
-                <p><strong>Product name:</strong> ${sauce}</p>
-                <p><strong>Allergens:</strong> ${toppings.join(' <> ')}</p>
+                <p><strong>Soße:</strong> ${sauce}</p>
+                <p><strong>Toppings:</strong> ${toppings.join(', ')}</p>
             `;
 
             document.getElementById('summary').innerHTML = summary;
@@ -158,37 +124,32 @@
             document.getElementById('urlSchemeText').textContent = url;
             document.getElementById('urlScheme').style.display = 'block';
         }
-     
-		function generateUrlScheme() {
+
+        function generateUrlScheme() {
             const customerName = document.getElementById('customerName').value;
             const sauce = document.getElementById('sauce').value;
-            const toppings = Array.from(document.querySelectorAll('input[name="toppings"]:checked')).map(el => el.value).join(' <> ');
-			const text1 = document.getElementById("text1Object").value;
-            const text2 = document.getElementById("text2Object").value;
-			const copies = document.getElementById('text3Object').value;
-			return `brotherwebprint://print?filename=joghurt.lbx&size=58.bin&text_text1=${encodeURIComponent(text1)}&text_text2=${encodeURIComponent(text2)}&text_name=${encodeURIComponent(customerName)}&text_sauce=${encodeURIComponent(sauce)}&text_toppings=${encodeURIComponent(toppings)}`;
+            const toppings = Array.from(document.querySelectorAll('input[name="toppings"]:checked')).map(el => el.value).join(',');
+
+            return `brotherwebprint://print?filename=joghurt.lbx&size=58.bin&text_name=${encodeURIComponent(customerName)}&text_sauce=${encodeURIComponent(sauce)}&text_toppings=${encodeURIComponent(toppings)}`;
         }
 
         function resetInputs() {
             document.getElementById('customerName').value = '';
-            document.getElementById('sauce').value = '';
-			document.getElementById('text1').value = '';
-			document.getElementById('text2').value = '';
+            document.getElementById('sauce').selectedIndex = 0;
             document.querySelectorAll('input[name="toppings"]').forEach(checkbox => checkbox.checked = false);
             document.getElementById('summary').innerHTML = '';
             document.getElementById('printButton').style.display = 'none';
             document.getElementById('previewButton').style.display = 'none';
-            document.getElementById('copies').value = 1;
-			document.getElementById('urlScheme').style.display = 'none';
+            document.getElementById('urlScheme').style.display = 'none';
         }
 
         // Limit the selection of toppings to a maximum of 3
         document.querySelectorAll('input[name="toppings"]').forEach(checkbox => {
             checkbox.addEventListener('change', function() {
                 const checkedToppings = document.querySelectorAll('input[name="toppings"]:checked');
-                if (checkedToppings.length > 6) {
+                if (checkedToppings.length > 3) {
                     this.checked = false;
-                    alert("You can use maximum 6 allergens.");
+                    alert("Du kannst nur bis zu 3 Toppings auswählen.");
                 }
             });
         });
