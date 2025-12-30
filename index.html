@@ -136,9 +136,10 @@
             const customerName = document.getElementById('customerName').value;
             const sauce = document.getElementById('sauce').value;
 			const copies = document.getElementById('copies').value;
-            const toppings = Array.from(document.querySelectorAll('input[name="toppings"]:checked')).map(el => el.value).join(',');
+            //const toppings = Array.from(document.querySelectorAll('input[name="toppings"]:checked')).map(el => el.value).join(',');
 
-            return `brotherwebprint://print?filename1=joghurt.lbx&size=58.bin&copies=3&text_name=${encodeURIComponent(customerName)}&text_sauce=${encodeURIComponent(sauce)}&text_toppings=${encodeURIComponent(toppings)}}`;
+            return `brotherwebprint://print?filename1=joghurt.lbx&size=58.bin&copies=1&text_name=${encodeURIComponent(customerName)}&text_sauce=${encodeURIComponent(sauce)}&text_toppings=${encodeURIComponent(toppings)}}`;
+			//return `brotherwebprint://print?filename1=joghurt.lbx&size=58.bin&copies=3&text_name=${encodeURIComponent(customerName)}&text_sauce=${encodeURIComponent(sauce)}&text_toppings=${encodeURIComponent(toppings)}}`;
         }
 
         function resetInputs() {
@@ -149,6 +150,7 @@
             document.getElementById('printButton').style.display = 'none';
             document.getElementById('previewButton').style.display = 'none';
             document.getElementById('urlScheme').style.display = 'none';
+			//document.getElementById('copies').value = 1;
         }
 
         // Limit the selection of toppings to a maximum of 3
